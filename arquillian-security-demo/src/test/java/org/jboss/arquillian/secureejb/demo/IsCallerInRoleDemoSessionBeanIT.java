@@ -36,6 +36,7 @@ import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.secureejb.JBossLoginContextFactory;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -51,11 +52,12 @@ public class IsCallerInRoleDemoSessionBeanIT {
 
     @Deployment
     public static WebArchive createTestArchive() {
-        return ShrinkWrap
-                .create(WebArchive.class, "test.war")
+        WebArchive webArchive = ShrinkWrap.create(WebArchive.class, "test.war")
                 .addClasses(JBossLoginContextFactory.class, IsCallerInRoleDemoSessionBean.class)
-                .addAsResource("users.properties")
+                .addAsWebInfResource("META-INF/ejb-jar.xml").addAsWebInfResource("META-INF/jboss-ejb3.xml")
+                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml").addAsResource("users.properties")
                 .addAsResource("roles.properties");
+        return webArchive;
     }
 
     @Test

@@ -11,7 +11,7 @@
   <assembly-descriptor>
     <s:security>
       <ejb-name>*</ejb-name>
-      <s:security-domain>other</s:security-domain>
+      <s:security-domain>demo</s:security-domain>
     </s:security>
   </assembly-descriptor>
 
