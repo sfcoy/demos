@@ -27,9 +27,9 @@ import static org.jboss.arquillian.secureejb.demo.SecurityRoles.ROLE3;
 
 import java.util.HashSet;
 import java.util.Set;
-
 import javax.annotation.Resource;
 import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.PermitAll;
 import javax.ejb.LocalBean;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
@@ -45,8 +45,9 @@ public class IsCallerInRoleDemoSessionBean {
     @Resource
     private SessionContext sessionContext;
 
+    @PermitAll
     public Set<String> discoverRoles() {
-        Set<String> roleNames = new HashSet<String>();
+        Set<String> roleNames = new HashSet<>();
         DeclareRoles declaredRoles = IsCallerInRoleDemoSessionBean.class.getAnnotation(DeclareRoles.class);
         for (String roleName : declaredRoles.value())
             if (sessionContext.isCallerInRole(roleName))

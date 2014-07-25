@@ -27,6 +27,7 @@ import static org.jboss.arquillian.secureejb.demo.SecurityRoles.ROLE3;
 
 import javax.annotation.Resource;
 import javax.annotation.security.DeclareRoles;
+import javax.annotation.security.PermitAll;
 import javax.ejb.LocalBean;
 import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
@@ -42,6 +43,7 @@ public class CallerPrincipalDemoSessionBean {
     @Resource
     private SessionContext sessionContext;
 
+    @PermitAll
     public String getCallerPrincipalName() {
         return sessionContext.getCallerPrincipal().getName();
     }

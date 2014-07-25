@@ -1,7 +1,7 @@
 <?xml version="1.0"?>  
 <jboss:ejb-jar xmlns:jboss="http://www.jboss.com/xml/ns/javaee"
                   xmlns="http://java.sun.com/xml/ns/javaee"
-                  xmlns:s="urn:security"
+                  xmlns:s="urn:security:1.1"
                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                   xsi:schemaLocation="http://www.jboss.com/xml/ns/javaee http://www.jboss.org/j2ee/schema/jboss-ejb3-2_0.xsd
                      http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/ejb-jar_3_1.xsd"
