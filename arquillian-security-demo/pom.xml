@@ -27,7 +27,7 @@
 
     <groupId>org.jboss.demo</groupId>
     <artifactId>arquillian-security-demo</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <packaging>ejb</packaging>
 
     <name>Arquillian EJB Security Demo</name>
