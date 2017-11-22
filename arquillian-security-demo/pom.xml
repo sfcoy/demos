@@ -27,7 +27,7 @@
 
     <groupId>org.jboss.demo</groupId>
     <artifactId>arquillian-security-demo</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.2-wildfly-10.1.0-update-SNAPSHOT</version>
     <packaging>ejb</packaging>
 
     <name>Arquillian EJB Security Demo</name>
@@ -50,14 +50,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
         <maven-surefire-plugin.version>2.20.1</maven-surefire-plugin.version>
 
-        <version.arquillian_core>1.1.5.Final</version.arquillian_core>
-        <version.wildfly>8.1.0.Final</version.wildfly>
-        <version.org_jboss_spec_javaee_7_0>1.0.1.Final</version.org_jboss_spec_javaee_7_0>
+        <version.arquillian_core>1.1.14.Final</version.arquillian_core>
+        <version.org_jboss_spec_javaee_7_0>1.1.0.Final</version.org_jboss_spec_javaee_7_0>
 
     </properties>
 
@@ -141,10 +140,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
-                </configuration>
             </plugin>
             <plugin>
                 <artifactId>maven-ejb-plugin</artifactId>
@@ -187,18 +182,18 @@
             <dependency>
                 <groupId>org.jboss.ejb3</groupId>
                 <artifactId>jboss-ejb3-ext-api</artifactId>
-                <version>2.0.0</version>
+                <version>2.2.0.Final</version>
                 <scope>provided</scope>
             </dependency>
             <dependency>
-                <groupId>org.wildfly</groupId>
+                <groupId>org.wildfly.arquillian</groupId>
                 <artifactId>wildfly-arquillian-container-managed</artifactId>
-                <version>${version.wildfly}</version>
+                <version>2.1.0.Final</version>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.11</version>
+                <version>4.12</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -230,7 +225,7 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.wildfly</groupId>
+            <groupId>org.wildfly.arquillian</groupId>
             <artifactId>wildfly-arquillian-container-managed</artifactId>
             <scope>test</scope>
         </dependency>
